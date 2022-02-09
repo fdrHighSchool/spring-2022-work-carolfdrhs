@@ -19,14 +19,13 @@ public class storeData{
       array2D[i][1]=s.nextLine();
 
 
-      System.out.println("Enter close contact(Y/N)");
-      array2D[i][2]=s.nextLine();
-
-
+      System.out.println("Enter close contact(true or false)");
+      array2D[i][2]=s.nextBoolean();
 
       int[] grades = new int[5];
-      for(int j = 0; j < grades.length; j++) {
-        grades[j] = (int)(Math.random() * 46) + 55;
+      for(int j = 0; j<grades.length; j++){
+        System.out.println("Enter grades(" + j + " out of 5)");
+        grades[j] = s.nextInt();
       }
       array2D[i][3]=grades;
 
