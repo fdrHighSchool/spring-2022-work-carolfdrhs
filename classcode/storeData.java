@@ -4,37 +4,19 @@ import java.util.*;
 public class storeData{
   public static void main(String[] args){
     Scanner s = new Scanner(System.in);
+    Student s1 = new Student(1234567,"Jimmy Smith",true,new int[] {90,80,95,90,100});
+    Student s2 = new Student(9876543,"Maria Hernandez",false,new int[] {95,100,100,90,90});
+    Student s3 = new Student(1357911,"Jamal Jenkins",false,new int[] {90,80,95,90,100});
+    Student s4 = new Student(2468101,"Ramiz Ahmed",true,new int[] {90, 100, 75, 85, 90});
+    Student s5 = new Student(1928374,"Michael Green",true,new int[] {80, 80, 65, 55, 90});
 
-    System.out.println("How many students do you want to add?");
-    int numStudent = s.nextInt();
-    Object[][] array2D = new Object[numStudent][4];
-
-
-    for(int i = 0; i<array2D.length; i++){
-      System.out.println("Enter student ID");
-      array2D[i][0]=s.nextInt();
-      s.nextLine();
-
-      System.out.println("Enter student name");
-      array2D[i][1]=s.nextLine();
-
-
-      System.out.println("Enter close contact(Y/N)");
-      array2D[i][2]=s.nextLine();
-
-
-
-      int[] grades = new int[5];
-      for(int j = 0; j < grades.length; j++) {
-        grades[j] = (int)(Math.random() * 46) + 55;
-      }
-      array2D[i][3]=grades;
-
-
-
-
+    System.out.println(s1.getAverage());
+    if(s1.getCC()){
+      System.out.println("Please report to the auditorium for you take-home test");
     }
-    System.out.println(Arrays.deepToString(array2D));
+    else{
+      System.out.println("false");
+    }
 
   }
 
