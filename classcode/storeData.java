@@ -11,6 +11,7 @@ public class storeData {
     Student student5 = new Student("1928374", "Michael Green", true, new int[] {80, 80, 65, 55, 90});
 
 
+
     // calling getter methods to display data
     System.out.println(student1.getName() + "'s average is: " + student1.getAverage());
     System.out.println(student2.getName() + "'s average is: " + student2.getAverage());
@@ -28,6 +29,18 @@ public class storeData {
     student3.setCloseContact(false);
     student4.setCloseContact(true);
     student5.setCloseContact(true);
+
+//test method
+    if(student5.isFailing()){
+      System.out.println(student5.getName() + " is failing");
+    }
+    if(student1.isFailing()){
+      System.out.println(student1.getName() + " is failing");
+    }
+    else{
+      System.out.println(student1.getName() + " is passing");
+    }
+
 
 
 
