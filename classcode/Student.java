@@ -1,49 +1,52 @@
-public class Student{
-//fields, instance variables
-  //private meaning that it can only be accessed in this class
-  private int id;
+public class Student {
+  // fields, instance varaibles (data)
+  // each instance of the Student class gets a copy of each variable
+  private String id;
   private String name;
-  private boolean cc;
+  private boolean closeContact;
   private int[] grades;
 
-//constructor(name of constructor matches the class name)
-public void Student(int id, String n, boolean cc, int[] g){
-  this.id = id;
-  this.name = n;
-  this.cc = cc;
-  this.grades = g;
-}
-
-public double getAverage(){
-  int total = 0;
-  for(int grade : this.grades){
-    total+= grade;
+  // constuctor method
+  public Student(String id, String n, boolean cc, int[] g) {
+    this.id = id;
+    this.name = n;
+    this.closeContact = cc;
+    this.grades = g;
   }
-  return total / grades.length;
-}
 
+  // behaviors (methods)
 
+  // get the close contact status of the student
+  public boolean getCloseContact() {
+    return this.closeContact;
+  } // end isCloseContact method
 
-// behaviors(methods)
-//get the close contact status of the student
-public boolean getCC(){
-  return this.cc;
+  // set the value of close contact
+  public void setCloseContact(boolean value) {
+    if(value){
+      System.out.println(this.name);
+    }
 
-}//end getCC method
+  }
 
-//set the value of cc
-public void setCC(boolean value){
+  // see if the student is failing
+  public boolean isFailing() {
 
-}//end setCC method
+    return false;
+  }
 
-//see if the student is failing
-public boolean isFailing(){
-  return true;
-}//end isFailing method
+  // get object's name value
+  public String getName() {
+    return this.name;
+  }
 
-//get the String value of the objects
-public String getName(){
-  return this.name;
-}//end getName method
+  public double getAverage() {
+    int total = 0;
+
+    for (int grade : this.grades) {
+      total += grade;
+    } // end for-each loop
+    return total / grades.length;
+  } // end getAverage method
 
 }
