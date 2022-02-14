@@ -24,13 +24,12 @@ public class storeData {
       System.out.println("You are not a close contact, keep masking! Get boosted!");
     }
 
-    student1.setCloseContact(true);
-    student2.setCloseContact(false);
-    student3.setCloseContact(false);
-    student4.setCloseContact(true);
-    student5.setCloseContact(true);
 
-//test method
+
+//test setCloseContact method
+    student3.setCloseContact(false);
+
+//test isFailing method
     if(student5.isFailing()){
       System.out.println(student5.getName() + " is failing");
     }

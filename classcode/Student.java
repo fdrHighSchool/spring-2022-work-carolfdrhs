@@ -23,9 +23,8 @@ public class Student {
 
   // set the value of close contact
   public void setCloseContact(boolean value) {
-    if(value){
-      System.out.println(this.name);
-    }
+    this.closeContact = value;
+    System.out.println("set " + this.closeContact);
 
   }
 
