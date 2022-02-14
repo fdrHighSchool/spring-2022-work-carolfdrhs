@@ -13,6 +13,13 @@ public class Student {
     this.closeContact = cc;
     this.grades = g;
   }
+  //alternate constuctor
+  public Student(String id, String n, int[] g) {
+    this.id = id;
+    this.name = n;
+    this.closeContact = false;
+    this.grades = g;
+  }
 
   // behaviors (methods)
 
