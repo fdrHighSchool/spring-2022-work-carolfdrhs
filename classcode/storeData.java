@@ -40,7 +40,7 @@ public class storeData {
       System.out.println(student1.getName() + " is passing");
     }
 
-
+    System.out.println(student2.toString());
 
 
   } // end main method
