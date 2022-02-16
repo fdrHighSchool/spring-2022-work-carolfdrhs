@@ -1,9 +1,14 @@
 public class Main{
   public static void main(String[] args){
-    Rational rational1 = new Rational(2,3);
-    System.out.println(rational1.toString());
-    rational1.negate();
-    rational1.printRational();
+    int num = 2;
+    int den = 5;
+    Rational rational1 = new Rational(num,den);
+    Rational rational2 = new Rational(num,den);
+
+    rational1.add(rational2);
+
+
+
   }
 
 
