@@ -30,13 +30,14 @@ public class Rational{
     this.n *= -1;
 
   }
-  public void invert(int num, int den){
-    this.n = den;
-    this.d = num;
+  public void invert(){
+    int tempNum = this.n;
+    this.n = this.d;
+    this.d = tempNum;
 
   }
   public double toDouble(){
-    return this.n / this.d;
+    return (double)this.n / this.d;
 
   }
   public void reduce(int num,int den){
@@ -50,7 +51,7 @@ public class Rational{
     den = den/gcf;
     System.out.println(num + "/" + den);
   }
-  
+
   public void add(Rational two){
     int commonDen = (this.d*two.getDen());
     int num = (this.n*two.getDen())+(two.getNum()*this.d);
