@@ -1,8 +1,12 @@
 public class tester {
   public static void main(String[] args){
-    Metrocard m1 = new Metrocard(30.75);
-    m1.addMoney(20);
-    System.out.println(m1.getPrice());
+    //boolean expiration, String currentTime, int day
+    Metrocard m1 = new Metrocard(false,"7:23", 6);
+    m1.swipe();
+    m1.swipe();
+    m1.swipe();
 
+    m1.time();
+    m1.date();
   }
 }

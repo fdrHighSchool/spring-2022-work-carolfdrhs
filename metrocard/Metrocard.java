@@ -1,75 +1,77 @@
 public class Metrocard{
-  private double price;
   private boolean expiration;
-  private int days;
-  private boolean unlimited;
-  private int dOW;
-  private String time;
+  private String currentTime;
+  private int day;//1-7(1-Monday 7-Sunday)
+  private int numSwipe = 0;
+
+/*
+GOALS:
+5am - 8pm time limit ---> 5-20
+only on weekdays
+time limit between swipes ~20 mins
+3 swipes per day
+*/
 
 
-//CONSTRUCTORS:
+//CONSTRUCTOR
+  public Metrocard(boolean expiration, String currentTime,int day){
+    this.expiration = expiration;
+    this.currentTime = currentTime;
+    this.day = day;
 
-//unlimited
-public Metrocard(boolean e, int d){
-  this.expiration = e;
-  this.days = d;
-  this.unlimited = true;
-  if(this.days == 30){
-    this.price = 128;
   }
-  else{
-    this.price = 34;
+
+  public void setExpiration(boolean e){
+    this.expiration = e;
+
   }
+
+  public boolean getExpiration(){
+    return this.expiration;
+  }
+
+//counts numbers of swipes on the day (limited 3)
+  public void swipe(){
+    if(this.numSwipe == 3){
+      System.out.println("no more swipes today");
+    }
+    else{
+      this.numSwipe++;
+      int remain = 3-this.numSwipe;
+      System.out.println("Swipes remaining: " + remain);
+    }
+
+  }
+
+  public int getNumSwipe(){
+    return this.numSwipe;
+
+  }
+
+  public void time(){
+    int hour = Integer.parseInt(this.currentTime.substring(0,this.currentTime.indexOf(":")));
+    // int minutes = Integer.parseInt(this.currentTime.substring(this.currentTime.indexOf(":")+1));
+    if(hour<5 || hour>20){
+      System.out.println("Invalid time. Only allowed during times: 5am-8pm");
+
+    }
+    else{
+      System.out.println("time valid");
+    }
+
+  }
+  public void date(){
+    if(this.day == 6 || this.day == 7){
+      System.out.println("Can't use on weekends");
+
+    }
+    else{
+      System.out.println("date valid");
+    }
+  }
+
+
+
+
+
 }
-
-//regular (2.75 per ride)
-public Metrocard(double p){
-  this.price = p;
-  this.unlimited = false;
-}
-
-//student
-public Metrocard(int dOW, String time){
-  //5am - 8pm time limit
-  //only on weekdays
-  //time limit between swipes ~20 mins
-  //3 swipes per day
-}
-
-
-//METHODS:
-public double getPrice(){
-  return this.price;
-}//end getPrice
-
-//check if card is expired
-public void isExpired(){
-  if(this.expiration){
-    System.out.println("expired");
-  }
-}//end isExpired
-
-//change the expiration to true or false
-public void setE(boolean e){
-  this.expiration = e;
-}//end setE
-
-//add money to a regular metrocard
-public void addMoney(double add){
-  this.price += add;
-}//end addMoney
-
-//if regular metrocard return original price-2.75 but if unlimited returns the original price
-public double swipe(){
-  if(this.unlimited){
-    return this.price;
-  }
-  else if(this.unlimited == false){
-    this.price -= 2.75;
-    return this.price;
-  }
-  return this.price;//return for if student metrocard
-}//end swipe
-
-
-}//end class
