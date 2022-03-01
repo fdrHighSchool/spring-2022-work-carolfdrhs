@@ -5,7 +5,10 @@ public class tester {
     m1.swipe();
     m1.swipe();
     m1.swipe();
-
+    m1.swipe();
+    if(getExpiration()){
+      System.out.println("expired");
+    }
     m1.time();
     m1.date();
   }

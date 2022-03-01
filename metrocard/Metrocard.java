@@ -2,7 +2,7 @@ public class Metrocard{
   private boolean expiration;
   private String currentTime;
   private int day;//1-7(1-Monday 7-Sunday)
-  private int numSwipe = 0;
+  private int numSwipe = 3;
 
 /*
 GOALS:
@@ -32,13 +32,12 @@ time limit between swipes ~20 mins
 
 //counts numbers of swipes on the day (limited 3)
   public void swipe(){
-    if(this.numSwipe == 3){
+    if(this.numSwipe == 0){
       System.out.println("no more swipes today");
     }
     else{
-      this.numSwipe++;
-      int remain = 3-this.numSwipe;
-      System.out.println("Swipes remaining: " + remain);
+      this.numSwipe--;
+      System.out.println("Swipes remaining: " + numSwipe);
     }
 
   }
