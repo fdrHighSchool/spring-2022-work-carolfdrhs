@@ -69,6 +69,18 @@ time limit between swipes ~20 mins
     }
   }
 
+  public void nextDay(){
+    this.day++;
+    this.numSwipe = 3;
+  }
+
+  public void setTime(String t){
+    this.currentTime = t;
+  }
+  public String getTime(){
+    return this.currentTime;
+  }
+
 
 
 
