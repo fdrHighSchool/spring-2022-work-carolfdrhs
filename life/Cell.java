@@ -1,5 +1,4 @@
 public class Cell{
-  private String[][] grid;
   private boolean status; //true = alive; false = dead;
   private int turn; //turn to seperate the generations
 
@@ -14,10 +13,28 @@ Generations must be seperated
 */
 
 //CONSTRUCTOR
-  public Cell(String[][] g, boolean s, int t){
-    this.grid = g;
+  public Cell(boolean s, int t){
     this.status = s;
     this.turn = t;
+  }
+  public String toString(){
+    if(status){
+      return "*";
+    }
+    else{
+      return "-";
+    }
+  }
+
+  public void setStatus(boolean s){
+    this.status = s;
+  }
+
+  public around(){
+    int numArround = 0;
+    for(){
+
+    }
   }
 
 
