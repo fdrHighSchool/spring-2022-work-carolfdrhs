@@ -17,6 +17,7 @@ Generations must be seperated
     this.status = s;
     this.turn = t;
   }
+
   public String toString(){
     if(status){
       return "*";
@@ -29,13 +30,38 @@ Generations must be seperated
   public void setStatus(boolean s){
     this.status = s;
   }
+  public boolean getStatus(){
+    return this.status;
+  }
 
-  public around(){
+
+
+
+  public int around(int r, int c){
     int numArround = 0;
-    for(){
+    for(int i = -1; i <= 1; i++){
+      for(int j = -1; j <= 1; j++){
+        if(board[r + i][c + j].getStatus()){
+          numArround++;
+        }
+      }
+    }
+    return numArround;
 
     }
-  }
+
+
+
+
+
+
+
+
+//goes to the next turn (checks through conditions)
+  // public void nextTurn(){
+  //
+  //
+  // }
 
 
 

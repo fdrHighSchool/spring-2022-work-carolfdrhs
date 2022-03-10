@@ -1,5 +1,5 @@
 public class Board{
-  Cell[][] board;
+  public Cell[][] board; //public?
 
 
 //CONSTRUCTOR
