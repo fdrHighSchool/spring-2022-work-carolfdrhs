@@ -12,17 +12,19 @@ public class Life{
     grid.display();
     boolean play = true;
 
-    while(play){
-      String next = s.nextLine();
-      if(next.toLowerCase().equals("quit")){
-        play = false;
-      }
-      else{
-        grid.display();
-      }
 
 
+  while(play){
+    String next = s.nextLine();
+    if(next.toLowerCase().equals("quit")){
+      play = false;
     }
+    else{
+      grid.display();
+    }
+
+
+  }
 
 
 
