@@ -1,5 +1,5 @@
 public class Board{
-  static Cell[][] board;
+  Cell[][] board;
   Cell[][] boardCopy;
 
 /*
@@ -39,16 +39,19 @@ Generations must be seperated
     //loops through the copy
     for(int r = 0; r < boardCopy.length; r++){
       for(int c = 0; c < boardCopy[r].length; c++){
-        if(boardCopy[r][c].around(r,c,boardCopy) < 2){
+        if(boardCopy[r][c].getStatus() && boardCopy[r][c].around(r,c,boardCopy) < 2){
           board[r][c].setStatus(false);
         }
-        else if(boardCopy[r][c].around(r,c,boardCopy) > 3){
+        else if(boardCopy[r][c].getStatus() && boardCopy[r][c].around(r,c,boardCopy) > 3){
           board[r][c].setStatus(false);
 
         }
-        else if(boardCopy[r][c].around(r,c,boardCopy) == 2 || boardCopy[r][c].around(r,c,boardCopy) == 3){
+        else if(boardCopy[r][c].around(r,c,boardCopy) == 2){
           board[r][c].setStatus(true);
 
+        }
+        else if (boardCopy[r][c].getStatus() == false && boardCopy[r][c].around(r,c,boardCopy) == 3){
+          board[r][c].setStatus(true);
         }
       }
 

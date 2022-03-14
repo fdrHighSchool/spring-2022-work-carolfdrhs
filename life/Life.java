@@ -12,8 +12,7 @@ public class Life{
     grid.setPlace(4,6);
     grid.setPlace(5,6);
     grid.setPlace(6,6);
-
-
+    
     grid.display();
     boolean play = true;
 
