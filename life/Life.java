@@ -10,8 +10,8 @@ public class Life{
 
     grid.fill();
     grid.setPlace(4,6);
-    // grid.setPlace(5,6);
-    // grid.setPlace(6,6);
+    grid.setPlace(5,6);
+    grid.setPlace(6,6);
 
 
     grid.display();
