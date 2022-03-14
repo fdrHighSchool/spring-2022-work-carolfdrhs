@@ -1,5 +1,6 @@
 public class Board{
-  Cell[][] board;
+  static Cell[][] board;
+  Cell[][] boardCopy;
 
 /*
 RULES
@@ -14,24 +15,38 @@ Generations must be seperated
 //CONSTRUCTOR
   public Board(int r, int c){
     board = new Cell[r][c];
+    boardCopy = new Cell[r][c];
 
   }
+
+//for testing
+  public void setPlace(int r, int c){
+    board[r][c].setStatus(true);
+  }
+
+
 
 //goes to the next turn (checks through conditions)
 //create new grid, copy grid to seperate generations, loop through the copy grid but change the old grid
   public void nextTurn(){
-    Cell[][] boardCopy;
-
+    //copies the board
     for(int r = 0; r < board.length; r++){
       for(int c = 0; c < board[r].length; c++){
-        if(board[r][c].around(r,c)-1 < 2){
+        boardCopy[r][c] = board[r][c];
+      }
+    }
+
+    //loops through the copy
+    for(int r = 0; r < boardCopy.length; r++){
+      for(int c = 0; c < boardCopy[r].length; c++){
+        if(boardCopy[r][c].around(r,c,boardCopy) < 2){
           board[r][c].setStatus(false);
         }
-        else if(board[r][c].around(r,c)-1 > 3){
+        else if(boardCopy[r][c].around(r,c,boardCopy) > 3){
           board[r][c].setStatus(false);
 
         }
-        else if(board[r][c].around(r,c)-1 == 2 || board[r][c].around(r,c)-1 == 3){
+        else if(boardCopy[r][c].around(r,c,boardCopy) == 2 || boardCopy[r][c].around(r,c,boardCopy) == 3){
           board[r][c].setStatus(true);
 
         }
