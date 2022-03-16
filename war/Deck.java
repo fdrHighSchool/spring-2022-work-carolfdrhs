@@ -26,18 +26,6 @@ public class Deck {
     }
   }
 
-  public void testPile(){
-    Pile test = new Pile(this.deck);
-    test.split();
-    System.out.println("Player1");
-    System.out.println(test.getP1());
-    System.out.println("Player2");
-    System.out.println(test.getP2());
-
-  }
-
-
-
 
   public ArrayList<Card> shuffle(){
     while(deck.size() > 0){

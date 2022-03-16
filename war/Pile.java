@@ -12,12 +12,16 @@ public class Pile {
   }
 
   public void split(){
-    for (Card card : this.deck) {
-      p1.add(this.deck.remove(0));
-      p2.add(this.deck.remove(0));
-      //?
+    for(int i = 0; i<26; i++){
+      this.p1.add(deck.get(i));
+    }
+    for(int i = this.deck.size()/2; i<52; i++){
+      this.p2.add(deck.get(i));
     }
 
+
+  }
+  public void toString(){
 
   }
 

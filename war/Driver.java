@@ -13,7 +13,7 @@ public class Driver {
 
     System.out.println(deck1.shuffle());
     System.out.println();
-    deck1.testPile();
+
 
   }
 }
