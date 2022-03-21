@@ -1,11 +1,11 @@
 import java.util.*;
 
 public class Pile {
-  private ArrayList<Card> deck;
+  private Deck deck;
   private ArrayList<Card> p1;
   private ArrayList<Card> p2;
 
-  public Pile(ArrayList<Card> d){
+  public Pile(Deck d){
     this.deck  = d;
     this.p1 = new ArrayList<Card>();
     this.p2 = new ArrayList<Card>();
@@ -13,17 +13,15 @@ public class Pile {
 
   public void split(){
     for(int i = 0; i<26; i++){
-      this.p1.add(deck.get(i));
+      this.p1.add(this.deck.getShuffle().get(i));
     }
-    for(int i = this.deck.size()/2; i<52; i++){
-      this.p2.add(deck.get(i));
+    for(int i = this.deck.getShuffle().size()/2; i<52; i++){
+      this.p2.add(this.deck.getShuffle().get(i));
     }
-
-
   }
-  public void toString(){
-
-  }
+  // public void toString(){
+  //
+  // }
 
 
   public ArrayList<Card> getP1(){

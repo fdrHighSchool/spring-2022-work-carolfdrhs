@@ -14,6 +14,9 @@ public class Driver {
     System.out.println(deck1.shuffle());
     System.out.println();
 
+    Pile g1 = new Pile(deck1);
+    g1.split();
+
 
   }
 }
