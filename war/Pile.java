@@ -12,16 +12,19 @@ public class Pile {
   }
 
   public void split(){
-    for(int i = 0; i<26; i++){
+    for(int i = 0; i<this.deck.getShuffle().size()/2; i++){
       this.p1.add(this.deck.getShuffle().get(i));
     }
     for(int i = this.deck.getShuffle().size()/2; i<52; i++){
       this.p2.add(this.deck.getShuffle().get(i));
     }
   }
-  // public void toString(){
-  //
-  // }
+  public void play(){
+    int totalCards = deck.getShuffle().size();
+    while(totalCards == 0){
+
+    }
+  }
 
 
   public ArrayList<Card> getP1(){

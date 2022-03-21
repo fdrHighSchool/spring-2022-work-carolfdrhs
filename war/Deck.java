@@ -23,12 +23,6 @@ public class Deck {
   public int getLength() {
     return deck.size();
   }
-  // public int size(){
-  //   return this.deck.size();
-  // }
-  // public Card get(int index){
-  //   return this.deck.get(index);
-  // }
 
   public void displayDeck() {
     for(Card c : this.deck) {
