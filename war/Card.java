@@ -15,6 +15,10 @@ public class Card {
     } // end else statement
 
   } // end constructor method
+  public int getValue(){
+    return this.value;
+  }
+
 
   public String toString() {
     String card = "";
