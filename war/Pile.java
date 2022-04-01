@@ -32,7 +32,7 @@ public class Pile {
       if(this.p2.get(i).getValue() == this.p1.get(i).getValue()){
         // System.out.println("war");
         // System.out.println();
-        i+=4;
+        i+=8;
       }
       if(i < this.p2.size()){
         greater(i);
